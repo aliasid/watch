@@ -1,0 +1,313 @@
+/* mandala.css, Rob Campbell, 2023, GPL 3 */
+:root {
+    --mo0color: DeepSkyBlue;
+    --mo1color: CornflowerBlue;
+    --mo2color: Lime;
+    --mo3color: YellowGreen;
+    --mo4color: Lime;
+    --mo5color: DarkRed;
+    --mo6color: Pink;
+    --mo7color: Red;
+    --mo8color: DarkGoldenrod;
+    --mo9color: Brown;
+    --mo10color: Sienna;
+    --mo11color: DodgerBlue;
+    --dayOfMonthTextColor: white;
+    --outerRingHeight: 800px;  
+    --innerRingsOffset: 25px;  /* NOTE Must be proportional to outerRingHeight */   
+    --clockHorzAdj: 10;
+    --clockVertAdj: 5;
+    --boolDisplaySecondHand: 0;
+    --boolDisplayHrsMinHands: 1;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+#zulu {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+
+/* For 2D graphics (clock)...
+*/
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Outside ring: Year and Month names...
+*/
+#outerRing {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: var(--outerRingHeight);
+}
+
+/* Ring divs...
+*/
+.ring {
+    position: relative;
+    top: var(--innerRingsOffset);
+}
+
+/* Test
+*/
+
+.rotatable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    text-align: center;
+    font: 18px Monaco, MonoSpace;
+}
+
+.border {
+    border-width: 2px;
+    border-style: solid;
+}
+
+.text_color {
+    color: white;
+}
+
+.border_color {
+    border-color: white;
+}
+
+/* Month border colors
+*/
+
+.mo0 {
+    border-color: var(--mo0color);
+}
+
+.mo1 {
+    border-color: var(--mo1color);
+}
+
+.mo2 {
+    border-color: var(--mo2color);
+}
+
+.mo3 {
+    border-color: var(--mo3color);
+}
+
+.mo4 {
+    border-color: var(--mo4color);
+}
+
+.mo5 {
+    border-color: var(--mo5color);
+}
+
+.mo6 {
+    border-color: var(--mo6color);
+}
+
+.mo7 {
+    border-color: var(--mo7color);
+}
+
+.mo8 {
+    border-color: var(--mo8color);
+}
+
+.mo9 {
+    border-color: var(--mo9color);
+}
+
+.mo10 {
+    border-color: var(--mo10color);
+}
+
+.mo11 {
+    border-color: var(--mo11color);
+}
+
+/* Month names in outer ring
+*/
+
+.mo0name {
+    color: var(--mo0color);
+}
+
+.mo1name {
+    color: var(--mo1color);
+}
+
+.mo2name {
+    color: var(--mo2color);
+}
+
+.mo3name {
+    color: var(--mo3color);
+}
+
+.mo4name {
+    color: var(--mo4color);
+}
+
+.mo5name {
+    color: var(--mo5color);
+}
+
+.mo6name {
+    color: var(--mo6color);
+}
+
+.mo7name {
+    color: var(--mo7color);
+}
+
+.mo8name {
+    color: var(--mo8color);
+}
+
+.mo9name {
+    color: var(--mo9color);
+}
+
+.mo10name {
+    color: var(--mo10color);
+}
+
+.mo11name {
+    color: var(--mo11color);
+}
+
+/* Day-of-the-week (Sun, Mon...Fri, Sat)...
+*/
+
+.day0 {
+    background-color: Black;
+}
+
+.day1 {
+    background-color: DarkSlateGray;
+}
+
+.day2 {
+    background-color: DimGray;
+}
+
+.day3 {
+    background-color: Black;
+}
+
+.day4 {
+    background-color: DarkSlateGray;
+}
+
+.day5 {
+    background-color: DimGray;
+}
+
+.day6 {
+    background-color: Black;
+}
+
+/* Calendar texts...
+*/
+
+.year {
+    color: white;
+    font-weight: bold;
+}
+
+.txtCurrentMonth {
+    font-weight: bold;
+}
+
+.weekNumber {
+    color: gray;
+}
+
+.dayOfWeek {
+    color: white;
+    font-weight: bold;
+}
+
+.currentDayOfWeek {
+    color: red;
+    font-weight: bold;
+}
+
+.dayOfMonth {
+    color: white;
+}
+
+.currentDayOfMonth {
+    color: red;
+    background-color: black;
+    font-weight: bold;
+}
+
+/* Clock texts...
+*/
+
+.txtSixtyDigit {
+    color: pink;
+}
+
+.txtSixtyTick {
+    color: red;
+}
+
+.twentyfourhour {
+    color: gray;
+}
+
+.txtHour {
+    font-weight: bold;    
+}
+
+.hourBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+}
+
+.currentHour {
+    color: red;
+    font-weight: bold;
+}
+
+.currentMonthNumber {
+    text-decoration: underline;
+}
+
+.currentMinute {
+    font-weight: bold;    
+}
+
+/* Clock hands...
+*/
+
+.secHand {
+    color: red;
+    width: 2px;
+    height: 160px;
+    /* radius (lenght) */
+}
+
+.minHand {
+    color: pink;
+    width: 4px;
+    height: 158px;
+    /* radius (lenght) */
+}
+
+.hrsHand {
+    color: white;
+    width: 10px;
+    height: 103px;
+    /* radius (lenght) */
+}
